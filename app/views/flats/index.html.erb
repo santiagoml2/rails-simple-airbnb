@@ -1,0 +1,40 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12" >
+      <h1> All our Flats</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <p> You searched for <strong> <%= @query %></strong>. We found <%= @flats.count %> flats out of <%=Flat.count %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @flats.each do |flat| %>
+    <div class="col-4">
+      <div class="flat-card">
+        <div class="flat-card-image">
+        </div>
+        <div class="flat-card-content">
+        </div>
+          <div class="flat-card-title">
+            <h4> <%= flat.name %></h4>
+          </div>
+          <p> <%= flat.address %></p>
+          <div class="flex">
+            <div class="flex">
+              <i class="fa-solid fa-euro-sign"> <%= flat.price_per_night%></i>
+              <i class="fa-solid fa-people-line"> <%= flat.number_of_guests%></i>
+            </div>
+
+
+
+
+          </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
